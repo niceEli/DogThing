@@ -8,7 +8,8 @@ export async function generateMetadata() {
   }
 }
 
-export async function getFirstDog() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+async function _getFirstDog() {
   let error: string | null = null;
   //const data = await getDog().catch(err => error = err.message);
   const grq = await GetDog.GET().catch(err => error = err.message);
