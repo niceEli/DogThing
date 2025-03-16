@@ -8,7 +8,7 @@ export default function Dogs({ initialDog, initialError }: { initialDog: string,
   useEffect(() => {
     setDog(initialDog)
     setError(initialError)
-  }, []);
+  }, [initialDog, initialError]);
 
   const dogCssProperties: CSSProperties = {
     width: "auto",
@@ -30,7 +30,7 @@ export default function Dogs({ initialDog, initialError }: { initialDog: string,
 
   useEffect(() => {
     if (initialDog == "" && initialError == null) setupDog().catch(err => setError(err.message));
-  }, [])
+  }, [initialDog, initialError])
 
   if (error) {
     return <div className={"flex items-center justify-center h-screen"}>
